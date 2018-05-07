@@ -1,0 +1,15 @@
+$(document).ready(function() {
+       $('.accordion dd').hide();
+       $('.accordion dt a').click(function(){
+          if ($(this).hasClass('selected')) {
+               $(this).removeClass('selected');
+               $(this).parent().next().slideUp();
+          } else {
+               $('.accordion dt a').removeClass('selected');
+               $(this).addClass('selected');
+               $('.accordion dd').slideUp();
+               $(this).parent().next().slideDown();
+          }
+          return false;
+       });
+});

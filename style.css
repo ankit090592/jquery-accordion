@@ -1,0 +1,37 @@
+:root{
+    font-size: 16px;
+  }
+
+  *{
+    box-sizing: border-box;
+  }
+
+  .accordion{
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;            
+     }
+
+     .card{
+        border: 1px solid #7788999e;        
+     }
+
+      /* Solving double border problem:
+      .card that comes directly after another .card dont get a top border. 
+      1. This is a pure CSS solution (without JS)
+      2. It doesn't assume anything about the layout (the div's dont have to be last childs of a container, 
+      or at some specific index)
+      3. It fixes the double border issue even if their are multiple .card one after the other.
+      4. It's a cross browser solution.*/
+     .card + .card{
+         border-top: none;
+     }
+
+  .card-header{
+      background: #d3d3d363;
+      padding: 1rem;      
+      }
+
+      .card-body{
+      padding: 0.6rem;
+  }
